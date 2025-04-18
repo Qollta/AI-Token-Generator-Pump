@@ -1,4 +1,4 @@
-# AI-Token-Generator-Pump
+# Token-Generator-Pump
 Hear Me Out Are you sick of those AI larps? Yeah, we are too.
 
 Apart from a few OGs, most of these AI tokens are pure nonsense. Even the recent ones created with tools like Claude Computer Use are essentially human-generated. The instructions are usually as simple as 'go to www.pump.fun, enter the pre-made human-generated name in the Name field'—and that’s all bullshit!
