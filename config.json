@@ -1,1 +1,30 @@
-xcfdgbdfgdfgfs bub
+import random
+import string
+import hashlib
+from datetime import datetime
+
+coin_prefixes = ["Bit", "Crypto", "Meta", "Block", "Chain", "Nano", "Token", "Quantum", "Neo", "Smart"]
+coin_suffixes = ["Coin", "Cash", "Token", "Byte", "Link", "Net", "Pay", "Unit", "X", "Z"]
+
+algorithms = ["SHA-256", "Scrypt", "X11", "Equihash", "Ethash", "RandomX", "Proof-of-Stake", "Proof-of-Authority"]
+networks = ["Mainnet", "Testnet", "Devnet"]
+
+def generate_coin_name():
+    prefix = random.choice(coin_prefixes)
+    suffix = random.choice(coin_suffixes)
+    return prefix + suffix
+
+def generate_ticker():
+    return ''.join(random.choices(string.ascii_uppercase, k=random.randint(3, 5)))
+
+def generate_coin():
+    name = generate_coin_name()
+    ticker = generate_ticker()
+    algorithm = random.choice(algorithms)
+    block_time = round(random.uniform(1.0, 10.0), 2)
+    premine = random.randint(0, 5000000)
+    max_supply = random.choice([21000000, 100000000, 500000000, 1000000000])
+    network = random.choice(networks)
+    created_at = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+    coin_id_raw = f"{name}:{ticker}:{created_at}"
+    coin_id_hash = hashlib.sha256(coin_id_raw.encode()).hexdigest()
